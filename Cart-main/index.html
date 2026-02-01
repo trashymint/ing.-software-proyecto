@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>fundamentos</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content container">
+            <nav class="navigation">
+                <a href="/" class="text-decoration-none">
+                    <p class="logotipo">404<span> Error</span></p>
+                </a>
+
+                <div class="btn-cart">
+                    <button type="button"><i class="fa-solid fa-cart-shopping icon-cart"></i></button>
+                    <span id="cartCount">0</span>
+
+                    <div class="cart">
+                        <div class="cart-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contentProducts">
+                                    <tr>
+                                        <td>
+                                            <input type="number" min="1">
+                                        </td>
+                                        <td>
+                                            <button type="button">X</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5" class="total">
+                                            <h4 class="heading-total">Total: <span id="total"></span></h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <button type="button" id="emptyCart">Vaciar carrito</button>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 fs-2 text-end">
+                    <span>Hola, </span>
+                    <div class="dropdown d-inline">
+                        <a href="#" class="dropdown-toggle" id="elegir" data-bs-toggle="dropdown"
+                            aria-expanded="false">Usuario</a>
+                        <ul class="dropdown-menu p-3 fs-3" aria-labelledby="elegir">
+                            <li> <a class="dropdown-item" href="iniciarSesion.html">Iniciar Sesión</a></li>
+                            <li> <a class="dropdown-item" href="crearUsuario.html">Crear Nuevo Usuario</a></li>
+                            <li> <a class="dropdown-item" href="#">Crear Reporte de Fraude</a></li>
+                            <li> <a class="dropdown-item" href="#">Publicar producto</a></li>
+                            <li> <hr class="dropdown-divider"></li>
+                            <li> <a class="dropdown-item" href="#" id="logoutBtn" style="color: red; display: none;">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="banner-grid container">
+
+            <div class="banner-item">
+                <i class="fa-solid fa-bullseye icon-banner"></i>
+                <h3>De javerianos para javerianos!</h3>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="products" id="listProducts">
+            <h2>Tienda</h2>
+            <div class="products-grid container">
+                <div class="product">
+                    <div id="carouselProduct1" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/assets/img/products/product-01.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/img/products/product-01b.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/img/products/product-01c.png" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduct1"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProduct1"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Teclado</h4>
+                        <div class="price">
+                            <p id="currentPrice">$18000</p>
+                        </div>
+                        <button type="button" onclick="window.location.href='productoDetallado.html?id=1'">Ver detalles</button>
+                        <button class="btn-add" type="button" data-id="1">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <div id="carouselProduct2" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/assets/img/products/product-02.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/img/products/product-02b.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduct2"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProduct2"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Audifonos</h4>
+
+                        <div class="price">
+                            <p id="currentPrice">$18000</p>
+                        </div>
+                        <button type="button" onclick="window.location.href='productoDetallado.html?id=2'">Ver detalles</button>
+                        <button class="btn-add" type="button" data-id="2">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <div id="carouselProduct3" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/assets/img/products/product-03.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/img/products/product-03b.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/img/products/product-03c.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduct3"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProduct3"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Mouse</h4>
+                        <div class="price">
+                            <p id="currentPrice">$18000</p>
+                        </div>
+                        <button type="button" onclick="window.location.href='productoDetallado.html?id=3'">Ver detalles</button>
+                        <button class="btn-add" type="button" data-id="3">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <div id="carouselProduct4" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/assets/img/products/product-04.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/img/products/product-04b.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduct4"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProduct4"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Reloj</h4>
+                        <div class="price">
+                            <p id="currentPrice">$18000</p>
+                        </div>
+                        <button type="button" onclick="window.location.href='productoDetallado.html?id=4'">Ver detalles</button>
+                        <button class="btn-add" type="button" data-id="4">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+                <div class="product">
+                    <div id="carouselProduct5" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/assets/img/products/product-05a.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/img/products/product-05b.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduct5"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProduct5"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h4>Router</h4>
+                        <div class="price">
+                            <p id="currentPrice">$18000</p>
+                        </div>
+                        <button type="button" onclick="window.location.href='productoDetallado.html?id=5'">Ver detalles</button>
+                        <button class="btn-add" type="button" data-id="5">Añadir al carrito</button>
+                    </div>
+                </div><!--.product-->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy;2024 404 Error. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="/assets/plugins/fontawesome/js/all.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const usuarioStr = localStorage.getItem('usuario');
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (usuarioStr) {
+            try {
+                const usuario = JSON.parse(usuarioStr);
+                // Si no es vendedor, mostrar mensaje de acción no disponible
+                if (usuario && usuario.rol !== 'Vendedor') {
+                    const mensaje = document.createElement('div');
+                    mensaje.className = 'alert alert-warning text-center';
+                    mensaje.textContent = 'Esta acción no está disponible para tu tipo de usuario.';
+                    document.body.insertBefore(mensaje, document.body.firstChild);
+                }
+                if (usuario && usuario.nombre) {
+                    document.querySelector('.p-3.fs-2.text-end span + .dropdown a').textContent = usuario.nombre;
+                }
+                // Detectar click en "Crear Reporte de Fraude" y redirigir según rol
+                const menuItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
+                menuItems.forEach(item => {
+                    if (item.textContent.trim() === 'Crear Reporte de Fraude') {
+                        item.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            if (usuario.rol === 'Vendedor') {
+                                window.location.href = 'reporteVendedor.html';
+                            } else {
+                                window.location.href = 'reporteFraude.html';
+                            }
+                        });
+                    }
+                    if (item.textContent.trim() === 'Publicar producto') {
+                        item.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            if (usuario.rol === 'Vendedor') {
+                                window.location.href = 'venderProducto.html';
+                            } else {
+                                const mensaje = document.createElement('div');
+                                mensaje.className = 'alert alert-warning text-center';
+                                mensaje.textContent = 'Esta acción no está disponible para tu tipo de usuario.';
+                                document.body.insertBefore(mensaje, document.body.firstChild);
+                            }
+                        });
+                    }
+                });
+                if (logoutBtn) {
+                    logoutBtn.style.display = 'block';
+                    logoutBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        localStorage.removeItem('usuario');
+                        location.reload();
+                    });
+                }
+            } catch (e) {}
+        } else {
+            if (logoutBtn) logoutBtn.style.display = 'none';
+            // Si no está logueado, por defecto va a reporteFraude.html
+            const menuItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
+            menuItems.forEach(item => {
+                if (item.textContent.trim() === 'Crear Reporte de Fraude') {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.location.href = 'reporteFraude.html';
+                    });
+                }
+            });
+        }
+    });
+    </script>
+</body>
+
+</html>
